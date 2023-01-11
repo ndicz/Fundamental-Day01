@@ -107,16 +107,118 @@ namespace Fundamental // Note: actual namespace depends on the project name.
 
 
             //---------------------------------NO 8 --------------------------//
-            var currentDay = DateTime.Now;
-            var daysUntilSaturday = ((int)DayOfWeek.Saturday - (int)currentDay.DayOfWeek + 7) % 7;
-            var nextSaturday = currentDay.AddDays(daysUntilSaturday);
-            Console.WriteLine("Hari Sabtu {0}", nextSaturday.ToString("dd/MM/yyyy"));
-            Console.WriteLine("{0} hari lagi", daysUntilSaturday);
-           
+            //var currentDay = DateTime.Now;
+            //var daysUntilSaturday = ((int)DayOfWeek.Saturday - (int)currentDay.DayOfWeek + 7) % 7;
+            //var nextSaturday = currentDay.AddDays(daysUntilSaturday);
+            //Console.WriteLine("Hari Sabtu {0}", nextSaturday.ToString("dd/MM/yyyy"));
+            //Console.WriteLine("{0} hari lagi", daysUntilSaturday);
 
+
+            //---------------------------------NO 9 --------------------------//
+            //Console.Write("Masukkan angka : ");
+            //string text = Console.ReadLine();
+
+            //Console.Write("Masukkan kombinasi angka yang ingin dicari: ");
+            //string numberToSearch = Console.ReadLine();
+
+            //int startIndex = text.IndexOf(numberToSearch);
+            //int count = 0;
+            //while (startIndex != -1)
+            //{
+            //    count++;
+            //    startIndex = text.IndexOf(numberToSearch, startIndex + numberToSearch.Length);
+            //}
+            // Console.WriteLine($"Total Kata Yang Muncul {count} Dari Teks {text}" );
+
+            //---------------------------------NO 10 --------------------------//
+
+            //int[] numbers = new int[5];
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.Write("Masukkan angka ke-{0}: ", i + 1);
+            //    numbers[i] = int.Parse(Console.ReadLine());
+            //}
+            //Array.Sort(numbers);
+            //int secondGreatest = numbers[numbers.Length - 2];
+            //Console.WriteLine("Second Greatest Number: {0}", secondGreatest);
+
+            //---------------------------------NO 11 --------------------------//
+
+            //Console.Write("Masukan Kurwal : ");
+            //string inputan = Console.ReadLine();
+            //Console.Write("Maka Hasilnya Adalah" + CheckKurawal(inputan));
+
+            //---------------------------------NO 12 --------------------------//
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 10; j >= 5 + i; j--)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("====================================================");
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + i - 1 + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("====================================================");
+
+            for (int i = 1; i <= 4; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 3; i >= 1; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+            Console.WriteLine("====================================================");
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= 5 - i; j++)
+                {
+                    Console.Write("  ");
+                }
+                for (int j = i; j >= 1; j--)
+                {
+                    Console.Write(j + " ");
+                }
+                for (int j = 2; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static bool CheckKurawal(string input)
+        {
+            int count = 0;
+            foreach (var item in input)
+            {
+                if (item == '{')
+                    count++;
+                if (item == '}')
+                    count--;
+                if (count < 0)
+                    return false;
+            }
+            return true;
         }
     }
-
-
 }
-
